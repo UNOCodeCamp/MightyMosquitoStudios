@@ -1,12 +1,12 @@
 player = new Object();
 
-player.x = null;
-player.y = null;
+player.x = viewport.width/2;
+player.y = viewport.height/2;
 player.image = new Image();
-player.image.src = "";
-player.width = 32;
-player.height = 32;
-
+player.image.src = "assets/Player.png";
+player.width = 90;
+player.height = 90;
+player.isAttacking = false
 
 player.draw = function()
 {
@@ -20,7 +20,7 @@ player.isTouching = function( gameObject )
 	     	 && gameObject.x <= (player.x + player.width)
 		 	 && player.y <= (gameObject.y + gameObject.height)
 		 	 && gameObject.y <= (player.y + player.height) ); 
-}
+};
 
 player.move = function(x, y)
 {
@@ -31,5 +31,6 @@ player.move = function(x, y)
 
 player.attack = function()
 {
-
+	console.log("im attacking")
+	player.isAttacking = true
 };

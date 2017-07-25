@@ -3,14 +3,14 @@ hud = new Object();
 
 hud.draw = function()
 {
-	hud.drawText("Coins Collected:"+game.score,50, 50, "left",45)
+
 };
 
 hud.drawText = function(text, x, y, align, size)
 {
 	// #Score
-	renderer.ctx.fillStyle = "rgb(0, 250, 0)"; //set to white
-	renderer.ctx.font =  size +  "px Helvetica";  //set the font
+	renderer.ctx.fillStyle = "rgb(250, 250, 250)"; //set to white
+	renderer.ctx.font =  size + "px Helvetica";  //set the font
 	renderer.ctx.textAlign = align; //set to left
 	renderer.ctx.textBaseline = "top"; //set to top
 	renderer.ctx.fillText(text, x, y); //set the contents
@@ -27,7 +27,7 @@ hud.drawGameOver = function()
 	renderer.ctx.font = "42px Helvetica";  //set the font
 	renderer.ctx.textAlign = "center"; //set to left
 	renderer.ctx.textBaseline = "center"; //set to top
-	renderer.ctx.fillText("Game Over!", viewport.width/2, viewport.height/2); //set the contents
+	renderer.ctx.fillText("Game Over!", scene.width*32/2, scene.height*32/2); //set the contents
 
 	renderer.canvas.style="cursor: auto;";
 }
